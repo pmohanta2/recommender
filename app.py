@@ -10,6 +10,7 @@ from tensorflow import keras
 import numpy as np
 import os
 import numpy
+from PIL import Image
 
 
 # In[4]:
@@ -51,8 +52,8 @@ def main():
         
         if image_file is not None:
             
-            #img = cv2.imread(image_file)
-            img = cv2.imdecode(numpy.fromstring(image_file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
+            img =Image.open(image_file)
+            #img = cv2.imdecode(numpy.fromstring(image_file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
             st.image(img)
             
             if st.button("Process"):
