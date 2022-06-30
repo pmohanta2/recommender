@@ -95,8 +95,9 @@ def main():
     	st.write("Go to the About section from the sidebar to learn more about it.")
         
         # You can specify more file types below if you want
+        st.write("before")
     	image_file = st.file_uploader("Upload image", type=['jpeg', 'png', 'jpg', 'webp'])
-
+        st.write("after")
     	if image_file is not None:
 
     		image = Image.open(image_file)
