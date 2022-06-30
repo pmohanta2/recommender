@@ -97,7 +97,7 @@ def main():
         
         # You can specify more file types below if you want
     	image_file = st.file_uploader("Upload image", type=['jpeg', 'png', 'jpg', 'webp'])
-	st.write("uploaded")
+	#st.write("uploaded")
 
     	if image_file is not None:
 
