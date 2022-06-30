@@ -10,7 +10,6 @@ from tensorflow import keras
 import numpy as np
 import os
 import numpy
-from PIL import Image
 
 
 # In[4]:
@@ -41,7 +40,7 @@ def main():
     choice = st.sidebar.selectbox("Pick something fun", activities)
     
     EMOTIONS = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-    model = keras.models.load_model('model.h5')
+    model = keras.models.load_model('emotion.h5')
 
     if choice == "Home":
         
@@ -52,8 +51,8 @@ def main():
         
         if image_file is not None:
             
-            img =Image.open(image_file)
-            #img = cv2.imdecode(numpy.fromstring(image_file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
+            #img = cv2.imread(image_file)
+            img = cv2.imdecode(numpy.fromstring(image_file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
             st.image(img)
             
             if st.button("Process"):
