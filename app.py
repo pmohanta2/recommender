@@ -40,7 +40,7 @@ def main():
     choice = st.sidebar.selectbox("Pick something fun", activities)
     
     EMOTIONS = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-    model = keras.models.load_model('emotion.h5')
+    model = keras.models.load_model('model.h5')
 
     if choice == "Home":
         
